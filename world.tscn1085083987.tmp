@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://bnkgp10qi2855"]
+
+[ext_resource type="MeshLibrary" uid="uid://spgkhdcvje53" path="res://proto.tres" id="1_036b0"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_036b0"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_pkg7o"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://y7tbjujgyinm" path="res://player.tscn" id="5_036b0"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="5_ioo17"]
+[ext_resource type="Script" uid="uid://220uvgnjgrww" path="res://refs.gd" id="6_dwbse"]
+
+[sub_resource type="Resource" id="Resource_wse8f"]
+script = ExtResource("4_gbfbk")
+duration = 0.4
+transition = 2
+ease = 1
+
+[sub_resource type="Resource" id="Resource_ic0uy"]
+script = ExtResource("5_ioo17")
+keep_aspect = 1
+cull_mask = 1048575
+h_offset = 1.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[sub_resource type="Resource" id="Resource_k3n1d"]
+script = ExtResource("4_gbfbk")
+duration = 0.3
+transition = 2
+ease = 1
+
+[sub_resource type="Resource" id="Resource_2o6r5"]
+script = ExtResource("5_ioo17")
+keep_aspect = 1
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 0.0
+projection = 0
+fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
+
+[node name="World" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_036b0")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(0, 0, 0, 0, 2, 1441792, 0, 65535, 0, 0, 65534, 1441792, 1, 65534, 1441792, 2, 65534, 1441792, 2, 65535, 655361, 2, 0, 655361, 2, 1, 655361, 2, 2, 655361, 1, 2, 1, 1, 1, 1, 1, 0, 1, 1, 65535, 1, 65535, 65534, 1441792, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 65535, 2, 1441792, 65534, 2, 1048710, 65534, 1, 1048710, 65534, 0, 1048710, 65534, 65535, 1048710, 65534, 65534, 1048710, 0, 1, 0, 3, 65535, 0, 3, 0, 0, 4, 0, 0, 4, 1, 0, 4, 2, 0, 3, 2, 0, 3, 1, 0, 5, 0, 0, 5, 65535, 0, 4, 65535, 0, 5, 1, 1441792, 5, 2, 1441792, 5, 3, 1441792, 4, 3, 1441792, 3, 3, 1441792, 2, 3, 1441792, 1, 3, 1441792, 0, 3, 1441792, 5, 65534, 1441792, 4, 65534, 1441792, 3, 65534, 1441792)
+}
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.488484, 0.872573, 0, -0.872573, 0.488484, 0, 9.52688, 8.38861)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("5_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.443605, 0.535594, 0.543301)
+
+[node name="PlayerAimPhantomCamera3D2" type="Node3D" parent="CharacterBody3D" node_paths=PackedStringArray("follow_target")]
+unique_name_in_owner = true
+transform = Transform3D(0.953716, -0.0104944, -0.300522, 8.73695e-08, -0.99939, 0.0348994, -0.300706, -0.0332842, -0.953135, -0.894388, 0.316755, -2.372)
+script = ExtResource("3_pkg7o")
+follow_mode = 6
+follow_target = NodePath("")
+tween_resource = SubResource("Resource_wse8f")
+tween_on_load = false
+camera_3d_resource = SubResource("Resource_ic0uy")
+follow_offset = Vector3(0, 0.8, -0.399)
+follow_distance = 1.5
+spring_length = 1.5
+
+[node name="PlayerPhantomCamera3D2" type="Node3D" parent="CharacterBody3D" node_paths=PackedStringArray("follow_target")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.866023, 0.499997, 0, -0.499999, 0.866021, -0.443605, 1.2144, 2.48777)
+script = ExtResource("3_pkg7o")
+priority = 10
+follow_mode = 6
+follow_target = NodePath("")
+tween_resource = SubResource("Resource_k3n1d")
+tween_on_load = false
+camera_3d_resource = SubResource("Resource_2o6r5")
+follow_damping = true
+follow_distance = 3.5
+spring_length = 3.5
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("6_dwbse")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 2.98023e-08, 1.74999, 3.03107)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("3_036b0")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"

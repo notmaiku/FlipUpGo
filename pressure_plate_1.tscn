@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://igwa3secr5jc"]
+
+[ext_resource type="PackedScene" uid="uid://diefpkkp2lb1u" path="res://assets/proto/GLB format/button-floor-round.glb" id="1_m4ka3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4ka3"]
+size = Vector3(1.29956, 0.815918, 1)
+
+[node name="button-floor-round2" instance=ExtResource("1_m4ka3")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="button-floor-round" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="button-floor-round/StaticBody3D" index="0"]
+transform = Transform3D(0.377973, 0, 0, 0, 0.065485, 0, 0, 0, 0.495239, 0, -0.0163805, 0)
+shape = SubResource("BoxShape3D_m4ka3")
