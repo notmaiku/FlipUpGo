@@ -1,0 +1,82 @@
+[gd_scene load_steps=27 format=3 uid="uid://dakqo8c1bb1cn"]
+
+[ext_resource type="PackedScene" uid="uid://dt2e14oil6yea" path="res://assets/characters/aid-cane-blind.glb" id="1_lyc4o"]
+[ext_resource type="PackedScene" uid="uid://brajxni0qu0n4" path="res://assets/characters/aid-cane-low-vision.glb" id="2_mhphn"]
+[ext_resource type="PackedScene" uid="uid://pyh5mmudj4sk" path="res://assets/characters/aid-cane.glb" id="3_ts6lj"]
+[ext_resource type="PackedScene" uid="uid://hed4i1ry6o5o" path="res://assets/characters/aid-crutch.glb" id="4_pywd7"]
+[ext_resource type="PackedScene" uid="uid://bnjyx6nr2jagc" path="res://assets/characters/aid-defibrillator-green.glb" id="5_0708p"]
+[ext_resource type="PackedScene" uid="uid://vhjwt6phrcdm" path="res://assets/characters/aid-defibrillator-red.glb" id="6_4tudg"]
+[ext_resource type="PackedScene" uid="uid://cdn6obypeh2pb" path="res://assets/characters/aid-glasses.glb" id="7_3bq0k"]
+[ext_resource type="PackedScene" uid="uid://htkbotbg2b4u" path="res://assets/characters/aid-mask.glb" id="8_q7en4"]
+[ext_resource type="PackedScene" uid="uid://bf1y8qsa4s4xy" path="res://assets/characters/aid-sunglasses.glb" id="9_hapru"]
+[ext_resource type="PackedScene" uid="uid://cijjiio1srt02" path="res://assets/characters/aid_hearing.glb" id="10_1gufu"]
+[ext_resource type="PackedScene" uid="uid://btge6gt5v3a4l" path="res://assets/characters/character-female-a.glb" id="11_8jesl"]
+[ext_resource type="PackedScene" uid="uid://bh5hklba3b6ke" path="res://assets/characters/character-female-b.glb" id="12_ryd1d"]
+[ext_resource type="PackedScene" uid="uid://2n5ok7lke81p" path="res://assets/characters/character-female-c.glb" id="13_2jrsm"]
+[ext_resource type="PackedScene" uid="uid://cdmcf3t46pc0o" path="res://assets/characters/character-female-d.glb" id="14_mim6d"]
+[ext_resource type="PackedScene" uid="uid://dk33uakuswjuk" path="res://assets/characters/character-female-e.glb" id="15_p0xm8"]
+[ext_resource type="PackedScene" uid="uid://ccrrs5orxp8aa" path="res://assets/characters/character-female-f.glb" id="16_tf6qh"]
+[ext_resource type="PackedScene" uid="uid://dqetw8ov1uw8v" path="res://assets/characters/character-male-a.glb" id="17_1cd74"]
+[ext_resource type="PackedScene" uid="uid://dlai7vmcvsknx" path="res://assets/characters/character-male-b.glb" id="18_qxsmm"]
+[ext_resource type="PackedScene" uid="uid://bmxxv86bug88a" path="res://assets/characters/character-male-c.glb" id="19_7d17v"]
+[ext_resource type="PackedScene" uid="uid://bm4rykksbf4lw" path="res://assets/characters/character-male-d.glb" id="20_u75j0"]
+[ext_resource type="PackedScene" uid="uid://cwo2yjgcrhxsv" path="res://assets/characters/character-male-e.glb" id="21_ybcd1"]
+[ext_resource type="PackedScene" uid="uid://q3l0b3bw2i0t" path="res://assets/characters/character-male-f.glb" id="22_j2qcd"]
+[ext_resource type="PackedScene" uid="uid://g3qm7xnhiu60" path="res://assets/characters/wheelchair-deluxe.glb" id="23_ad28d"]
+[ext_resource type="PackedScene" uid="uid://dh8cf0uj1bey" path="res://assets/characters/wheelchair-power-deluxe.glb" id="24_w2a7r"]
+[ext_resource type="PackedScene" uid="uid://ber0mmusfwt1o" path="res://assets/characters/wheelchair-power.glb" id="25_y1php"]
+[ext_resource type="PackedScene" uid="uid://bbm6ert77ipva" path="res://assets/characters/wheelchair.glb" id="26_jkyem"]
+
+[node name="Node" type="Node"]
+
+[node name="aid-cane-blind2" parent="." instance=ExtResource("1_lyc4o")]
+
+[node name="aid-cane-low-vision2" parent="." instance=ExtResource("2_mhphn")]
+
+[node name="aid-cane2" parent="." instance=ExtResource("3_ts6lj")]
+
+[node name="aid-crutch2" parent="." instance=ExtResource("4_pywd7")]
+
+[node name="aid-defibrillator-green2" parent="." instance=ExtResource("5_0708p")]
+
+[node name="aid-defibrillator-red2" parent="." instance=ExtResource("6_4tudg")]
+
+[node name="aid-glasses2" parent="." instance=ExtResource("7_3bq0k")]
+
+[node name="aid-mask2" parent="." instance=ExtResource("8_q7en4")]
+
+[node name="aid-sunglasses2" parent="." instance=ExtResource("9_hapru")]
+
+[node name="aid_hearing2" parent="." instance=ExtResource("10_1gufu")]
+
+[node name="character-female-a2" parent="." instance=ExtResource("11_8jesl")]
+
+[node name="character-female-b2" parent="." instance=ExtResource("12_ryd1d")]
+
+[node name="character-female-c2" parent="." instance=ExtResource("13_2jrsm")]
+
+[node name="character-female-d2" parent="." instance=ExtResource("14_mim6d")]
+
+[node name="character-female-e2" parent="." instance=ExtResource("15_p0xm8")]
+
+[node name="character-female-f2" parent="." instance=ExtResource("16_tf6qh")]
+
+[node name="character-male-a2" parent="." instance=ExtResource("17_1cd74")]
+
+[node name="character-male-b2" parent="." instance=ExtResource("18_qxsmm")]
+
+[node name="character-male-c2" parent="." instance=ExtResource("19_7d17v")]
+
+[node name="character-male-d2" parent="." instance=ExtResource("20_u75j0")]
+
+[node name="character-male-e2" parent="." instance=ExtResource("21_ybcd1")]
+
+[node name="character-male-f2" parent="." instance=ExtResource("22_j2qcd")]
+
+[node name="wheelchair-deluxe2" parent="." instance=ExtResource("23_ad28d")]
+
+[node name="wheelchair-power-deluxe2" parent="." instance=ExtResource("24_w2a7r")]
+
+[node name="wheelchair-power2" parent="." instance=ExtResource("25_y1php")]
+
+[node name="wheelchair2" parent="." instance=ExtResource("26_jkyem")]

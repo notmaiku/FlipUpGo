@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccuhfi6fbmqiu"]
+
+[ext_resource type="PackedScene" uid="uid://jaapslabu57v" path="res://floor_square_2.tscn" id="145_0ljoq"]
+[ext_resource type="PackedScene" uid="uid://bhtgbtg41l5bg" path="res://stairs_2.tscn" id="145_euyud"]
+
+[node name="Node" type="Node"]
+
+[node name="floor-square2" parent="." instance=ExtResource("145_0ljoq")]
+
+[node name="stairs2" parent="." instance=ExtResource("145_euyud")]
