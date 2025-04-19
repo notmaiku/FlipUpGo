@@ -28,6 +28,17 @@ func _enter_tree():
 	
 func _ready() -> void:
 	_camera.current = is_multiplayer_authority()
+	var collsion_to_be: int
+	if get_groups().has('blue'):
+		collsion_to_be = 1
+		print('blue')
+	if get_groups().has('red'):
+		collsion_to_be = 2
+		print('red')
+
+	collision_layer = collsion_to_be
+	print('colllision', collision_layer)
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_exit"):

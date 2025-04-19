@@ -11,22 +11,29 @@ config_version=5
 [application]
 
 config/name="FlipGoUp"
-run/main_scene="uid://cjxb4wc40jvh2"
+run/main_scene="uid://ck42cvmd4l26e"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://dhjwk5ln7q6qg"
 
 [autoload]
 
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Refs="*res://refs.gd"
 
 [dotnet]
 
 project/assembly_name="FlipGoUp"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/3camera/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+
 [global_group]
 
 gravity_zone=""
 spawn=""
+blue=""
+red=""
 
 [input]
 

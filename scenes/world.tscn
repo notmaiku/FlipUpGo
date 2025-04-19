@@ -1,19 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://dfscpwvua44q"]
+[gd_scene load_steps=18 format=3 uid="uid://dfscpwvua44q"]
 
-[ext_resource type="MeshLibrary" uid="uid://2ee1c5l8vy1y" path="res://proto.tres" id="1_036b0"]
+[ext_resource type="MeshLibrary" uid="uid://c0ccrqcw58408" path="res://proto.tres" id="1_036b0"]
 [ext_resource type="PackedScene" uid="uid://bjcsr3tsq1ha8" path="res://scenes/objects/shape_slope_2.tscn" id="5_dwbse"]
-[ext_resource type="Script" uid="uid://220uvgnjgrww" path="res://refs.gd" id="6_dwbse"]
+[ext_resource type="Script" path="res://refs.gd" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://d4bvot7tsjiio" path="res://scenes/objects/pipe_2.tscn" id="6_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://d0kcy6ojduptm" path="res://scenes/objects/shape_hollow_cylinder_2.tscn" id="7_gbfbk"]
-[ext_resource type="Script" uid="uid://ljxom1r7uv7p" path="res://timer_g.gd" id="7_pkg7o"]
+[ext_resource type="Script" path="res://timer_g.gd" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://jaapslabu57v" path="res://scenes/objects/floor_square_2.tscn" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://c7ji4pi8p1sne" path="res://scenes/objects/number_12.tscn" id="8_ioo17"]
 [ext_resource type="PackedScene" uid="uid://ddqxrblnaaohg" path="res://scenes/objects/wall_2.tscn" id="10_wse8f"]
-[ext_resource type="Script" uid="uid://wiv6iraj15ve" path="res://spawner.gd" id="12_k3n1d"]
+[ext_resource type="Script" path="res://spawner.gd" id="12_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://cimex0y5fttpq" path="res://scenes/objects/number_double_8.tscn" id="13_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://c4qrlhkqr138h" path="res://scenes/objects/target.tscn" id="14_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://bhtgbtg41l5bg" path="res://scenes/objects/stairs_2.tscn" id="14_70uel"]
 [ext_resource type="PackedScene" uid="uid://c8p0yp8o0w3uk" path="res://scenes/objects/flag.tscn" id="14_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://btvr8hbfjx556" path="res://scenes/pipe_red.tscn" id="16_dss4m"]
 [ext_resource type="PackedScene" uid="uid://dij6dwqdv8k54" path="res://scenes/objects/wall_gravity.tscn" id="18_lakw3"]
 
 [sub_resource type="GDScript" id="GDScript_xo05s"]
@@ -246,6 +247,9 @@ script = ExtResource("6_dwbse")
 unique_name_in_owner = true
 wait_time = 0.75
 script = ExtResource("7_pkg7o")
+
+[node name="PipeRed" parent="." instance=ExtResource("16_dss4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24595, 1.52788, -1.79781)
 
 [connection signal="reset_timerg" from="Refs" to="Refs/Timer_G" method="_on_refs_reset_timerg"]
 [connection signal="spawn_player" from="Refs" to="Spawner" method="_on_player_spawn_me"]

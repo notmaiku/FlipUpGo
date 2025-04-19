@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjxb4wc40jvh2"]
+[gd_scene load_steps=8 format=3 uid="uid://ck42cvmd4l26e"]
 
-[ext_resource type="Script" uid="uid://buxvueei4j5ua" path="res://YTMulti.gd" id="1_boyg6"]
+[ext_resource type="Script" path="res://YTMulti.gd" id="1_boyg6"]
 [ext_resource type="PackedScene" uid="uid://cx5rdb300w5m7" path="res://scenes/player.tscn" id="2_feb5d"]
-[ext_resource type="Script" uid="uid://220uvgnjgrww" path="res://refs.gd" id="4_e8heu"]
+[ext_resource type="Script" path="res://refs.gd" id="4_e8heu"]
 [ext_resource type="PackedScene" uid="uid://dfscpwvua44q" path="res://scenes/world.tscn" id="5_7jktm"]
-[ext_resource type="Script" uid="uid://ljxom1r7uv7p" path="res://timer_g.gd" id="5_rvswv"]
+[ext_resource type="Script" path="res://timer_g.gd" id="5_rvswv"]
+[ext_resource type="PackedScene" uid="uid://c7ji4pi8p1sne" path="res://scenes/objects/number_12.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://dij6dwqdv8k54" path="res://scenes/objects/wall_gravity.tscn" id="7_eow3j"]
 
 [node name="Lobby" type="Node"]
 script = ExtResource("1_boyg6")
@@ -48,11 +50,32 @@ script = ExtResource("5_rvswv")
 [node name="Game" parent="." instance=ExtResource("5_7jktm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[connection signal="pressed" from="Net/Options/JoinButton" to="." method="JoinGame"]
+[node name="pipe2" parent="Game/World Objects" index="22"]
+transform = Transform3D(10, 0, 0, 0, 4.18389, 9.08268, 0, -9.08268, 4.18389, 3.901, -2.12799, -4.84711)
+
+[node name="number-12" parent="Game/World Objects" index="24"]
+transform = Transform3D(0.0154426, 2.98733, 6.33053, -6.99705, -0.176816, 0.100514, 0.202801, -6.32808, 2.98568, 3.25242, 2.93244, -18.7735)
+
+[node name="number-14" parent="Game/World Objects" index="25" instance=ExtResource("6_ryrav")]
+transform = Transform3D(-0.0378583, -2.26644, -6.62282, -6.99705, -0.176816, 0.100514, -0.199834, 6.62057, -2.26454, 4.31142, 2.89521, -24.3772)
+
+[node name="number-15" parent="Game/World Objects" index="26" instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.0256586, 2.66413, 6.47315, -6.99705, -0.176816, 0.100514, 0.201763, -6.47079, 2.66237, 4.83334, 2.89521, -22.6305)
+
+[node name="number-16" parent="Game/World Objects" index="27" instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.0256586, 2.66413, 6.47315, -6.99705, -0.176816, 0.100514, 0.201763, -6.47079, 2.66237, 4.83334, 2.89521, -22.6305)
+
+[node name="wall23" parent="Game/World Objects" index="56" instance=ExtResource("7_eow3j")]
+transform = Transform3D(0.607198, -1.34939, -2.60969, -2.68014, -1.34596, 0.0723616, -1.20339, 2.3168, -1.47794, 6.60536, 3.82282, -25.5291)
+
+[node name="wall24" parent="Game/World Objects" index="57" instance=ExtResource("7_eow3j")]
+transform = Transform3D(1.19668, -0.713161, -2.65694, -1.88251, -2.3251, -0.223789, -2.00602, 1.75651, -1.37498, 7.17626, 5.82419, -26.9066)
+
 [connection signal="pressed" from="Net/Options/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="Net/Options/JoinButton" to="." method="JoinGame"]
 [connection signal="pressed" from="Net/Options/JoinButton" to="." method="_on_join_pressed"]
-[connection signal="pressed" from="Net/Options/HostButton" to="." method="CreateGame"]
 [connection signal="pressed" from="Net/Options/HostButton" to="." method="OnHostButtonPressed"]
+[connection signal="pressed" from="Net/Options/HostButton" to="." method="CreateGame"]
 [connection signal="pressed" from="Net/Options/HostButton" to="." method="_on_host_pressed"]
 [connection signal="reset_timerg" from="Refs" to="Refs/Timer_G" method="_on_refs_reset_timerg"]
 [connection signal="start_timerg" from="Refs" to="Refs/Timer_G" method="_on_refs_start_timerg"]
